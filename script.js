@@ -62,6 +62,16 @@ app.get('/', (request, response) => {
         app: 'My App'
     });
 });
+
+app.post("/", (request, response, next) => {
+    response.status(200).json({
+      status: 200,
+      data: {
+        method: "POST",
+        message: "Bienvenido a la app (POST)",
+      },
+    });
+  });
  
 app.use((request, response, next) => {
     let error = new Error();
